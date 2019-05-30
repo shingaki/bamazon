@@ -23,7 +23,7 @@ connection.connect(function(err) {
 });
 
 function showInventory() {
-    connection.query("SELECT item_id, product_name, price, stock_quantity FROM products", function(err, res) {
+    connection.query("SELECT item_id, product_name, price, stock_quantity, product_sales FROM products", function(err, res) {
         if (err) throw err;
         console.table(res);
         // connection.end();
@@ -65,13 +65,25 @@ function processOrder(itemID) {
         if (stockQuantity > 0) {
 
             var totalPrice = res[0].price * userCount;
+
+            var productSales = res[0].product_sales + totalPrice;
+
             console.log("Your Total Cost Is: $"+ totalPrice);
 
             var theUpdateStatement = mysql.format("UPDATE products SET stock_quantity = ? WHERE item_id = ?", [stockQuantity, itemID]);
 
             connection.query(theUpdateStatement, function (err, res) {
-                console.log("The Inventory Has Been Updated!\n");
+
+                    console.log("The Inventory Has Been Updated!\n");
             })
+
+            var theUpdateSalesStatement = mysql.format("UPDATE products SET product_sales = ? WHERE item_id = ?", [productSales, itemID]);
+
+            connection.query(theUpdateSalesStatement, function (err, res) {
+
+                console.log("The Sales Has Been Updated!\n");
+            })
+
         } else { console.log("there is not enough inventory")}
 
         productName = res[0].product_name;
