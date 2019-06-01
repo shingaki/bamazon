@@ -1,5 +1,7 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
+var cTable = require('console.table');
+
 
 var connection = mysql.createConnection( {
     host: "localhost",
@@ -59,7 +61,9 @@ function viewProductsbyDept() {
             "FROM departments d, products p WHERE p.department_id = ? and p.department_id = d.department_id GROUP BY p.department_id, p.department_name, d.over_head_costs", [departmentChoice],
             function (err, res) {
                 if (err) throw err;
-                console.table(res);
+                var showTable = cTable.getTable(res);
+
+                console.log(showTable);
                 makeASelection();
             })
     })

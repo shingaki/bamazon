@@ -1,5 +1,7 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
+var cTable = require('console.table');
+
 
 // global variables
 
@@ -25,7 +27,11 @@ connection.connect(function(err) {
 function showInventory() {
     connection.query("SELECT item_id, product_name, price, stock_quantity, product_sales FROM products", function(err, res) {
         if (err) throw err;
-        console.table(res);
+
+        var showTable = cTable.getTable(res);
+
+        console.log(showTable);
+
         // connection.end();
         getUserInput();
     })
@@ -82,6 +88,9 @@ function processOrder(itemID) {
             connection.query(theUpdateSalesStatement, function (err, res) {
 
                 console.log("The Sales Has Been Updated!\n");
+
+                showInventory();
+
             })
 
         } else { console.log("there is not enough inventory")}

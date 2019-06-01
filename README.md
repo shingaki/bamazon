@@ -1,37 +1,21 @@
-## Welcome to GitHub Pages
+## bAmazon Store Front
 
-You can use the [editor on GitHub](https://github.com/shingaki/bamazon/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Challenge 1: bamazonCustomer.js
+Challenge 2: bamazonSupervisor.js
+Challenge 3: bamazonManager.js
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### My Approach
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+I elected to complete the challenges in the specified order. I read through the instructions, and make notes; making sure I understood the requirements.
 
-```markdown
-Syntax highlighted code block
+I tried something different by recording my screen while launching the application and going through the various features of each application.
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+For more details see [My bAmazon Store Front](https://youtu.be/3-5cukcjh38).
 
-**Bold** and _Italic_ and `Code` text
+### Link to demonstrate Tamami's bAmazon Store Front can be found below.
 
-[Link](url) and ![Image](src)
-```
+[My bAmazon Store Front](https://youtu.be/3-5cukcjh38)
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/shingaki/bamazon/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
